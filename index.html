@@ -345,7 +345,7 @@ It allows you to declaratively specify the Shape of your data, and Poi will mana
 </code></pre></div>
 
 
-<p>I think its too low level for application developers who just want to export some data to excel file. And maintaining <em>imperative</em> code like this is so hard that we may want a better way to deal with exporting data to excel. Why not just write a <strong>Schema</strong> of what we want to export and there's some tool to turn it to a valid xlsx file? Hopefully, this is just what Poi does.</p>
+<p>I think its too low level for application developers who just want to export some data to excel file. And maintaining <em>imperative</em> code like this is error prone and so hard that we may want a better way to deal with exporting data to excel. Why not just write a <strong>Schema</strong> of what we want to export and there's some tool to turn it to a valid xlsx file? Hopefully, this is just what Poi does.</p>
 <h2 id="quick-start">Quick Start</h2>
 <p>A <em>Hello World</em> example.</p>
 <p>What wee need is just a <code>Sheet</code> object.</p>
@@ -361,7 +361,7 @@ It allows you to declaratively specify the Shape of your data, and Poi will mana
 <p>Then an <em>xlsx</em> file has been created.</p>
 <p><img alt="hello" src="assets/hello.png" /></p>
 <p>What happened? We've created a <code>Sheet</code> object with a single <code>Cell</code> Node, which just contains the text <em>hello world</em>, and then we call <code>sheet.write</code> to write the sheet object to the <em>hello.xlsx</em> file. </p>
-<p>See, that's pretty simple. Of course Poi's ability is far beyond this, jump to <a href="basic-usage/">basic-usage.md</a> for more examples.</p>
+<p>See, that's pretty simple. Of course Poi's ability is far beyond this, jump to <a href="basic-usage/">Basic Usage</a> for more examples.</p>
                 
                   
                 

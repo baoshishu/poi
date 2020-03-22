@@ -387,28 +387,45 @@
     <span class="n">desc</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">price</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">created_at</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="n">img</span><span class="p">:</span> <span class="nb">str</span>
 
 
 <span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">Product</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;prod </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;desc </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">created_at</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">Product</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;prod </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;desc </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">price</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+        <span class="n">created_at</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(),</span>
+        <span class="n">img</span><span class="o">=</span><span class="s2">&quot;./docs/assets/product.jpg&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="p">]</span>
-<span class="n">columns</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;desc&quot;</span><span class="p">,</span> <span class="s2">&quot;Description&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="s2">&quot;Price&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;created_at&quot;</span><span class="p">,</span> <span class="s2">&quot;Create Time&quot;</span><span class="p">)]</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;attr&quot;</span><span class="p">:</span> <span class="s2">&quot;img&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Product Image&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;x_scale&quot;</span><span class="p">:</span> <span class="mf">0.27</span><span class="p">,</span> <span class="s2">&quot;y_scale&quot;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">},</span>
+    <span class="p">},</span>
+    <span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;desc&quot;</span><span class="p">,</span> <span class="s2">&quot;Description&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="s2">&quot;Price&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;created_at&quot;</span><span class="p">,</span> <span class="s2">&quot;Create Time&quot;</span><span class="p">),</span>
+<span class="p">]</span>
 <span class="n">sheet</span> <span class="o">=</span> <span class="n">Sheet</span><span class="p">(</span>
     <span class="n">root</span><span class="o">=</span><span class="n">Table</span><span class="p">(</span>
         <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
         <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
-        <span class="n">cell_width</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+        <span class="n">row_height</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
         <span class="n">cell_style</span><span class="o">=</span><span class="p">{</span>
-            <span class="s2">&quot;color: red&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">record</span><span class="p">,</span> <span class="n">col</span><span class="p">:</span> <span class="n">col</span><span class="o">.</span><span class="n">attr</span> <span class="o">==</span> <span class="s2">&quot;price&quot;</span>
-                                              <span class="ow">and</span> <span class="n">record</span><span class="o">.</span><span class="n">price</span> <span class="o">&gt;</span> <span class="mi">50</span>
+            <span class="s2">&quot;color: red&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">record</span><span class="p">,</span> <span class="n">col</span><span class="p">:</span> <span class="n">col</span><span class="o">.</span><span class="n">attr</span> <span class="o">==</span> <span class="s2">&quot;price&quot;</span> <span class="ow">and</span> <span class="n">record</span><span class="o">.</span><span class="n">price</span> <span class="o">&gt;</span> <span class="mi">50</span>
         <span class="p">},</span>
         <span class="n">date_format</span><span class="o">=</span><span class="s2">&quot;yyyy-mm-dd&quot;</span><span class="p">,</span>
         <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
         <span class="n">border</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
     <span class="p">)</span>
 <span class="p">)</span>
-<span class="n">sheet</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;table.xlsx&#39;</span><span class="p">)</span>
+<span class="n">sheet</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;table.xlsx&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 
